@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        button{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(244, 239, 249);
+            color: #4929ac;
+            font-size: medium;
+            border-radius: 7px;
+            border: 2px;
+        }
+        #result{
+            height: 100px;
+            width: 405px;
+            background-color: rgb(246, 243, 249);
+            font-size: medium;
+            border-radius: 10px;
+            margin-bottom: 2px;
+            border: 2px;
+            color: #4929ac;
+            margin-top: 50px;
+
+        }
+        h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(246, 243, 249);
+            display: inline;
+            color: #4929ac;
+            
+        }
+        body{
+            background: linear-gradient(90deg, rgb(26, 13, 42) 5%, rgba(98, 48, 120, 0.441) 60%, rgba(7, 1, 17, 0.012) 110%);
+        }
+        
+    </style>
+</head>
+<center><body>
+    <h1>CALCULATOR</h1> <br>
+    <input type = "text" placeholder="0" id ="result">
+    <table>
+        <tr>
+            <td><button onclick = "display('7')">7</button></td>
+            <td><button onclick = "display('8')">8</button></td>
+            <td><button onclick = "display('9')">9</button></td>
+            <td><button onclick = "display('+')">+</button></td>
+
+        </tr>
+        <tr>
+            <td><button onclick = "display('4')">4</button></td>
+            <td><button onclick = "display('5')">5</button></td>
+            <td><button onclick = "display('6')">6</button></td>
+            <td><button onclick = "display('-')">-</button></td>
+
+        </tr>
+        <tr>
+            <td><button onclick = "display('1')">1</button></td>
+            <td><button onclick = "display('2')">2</button></td>
+            <td><button onclick = "display('3')">3</button></td>
+            <td><button onclick = "display('*')">*</button></td>
+
+        </tr>
+        <tr>
+            <td><button onclick = "display('0')">0</button></td>
+            <td><button onclick = "clr('C')">C</button></td>
+            <td><button onclick = "calculate('=')">=</button></td>
+            <td><button onclick = "display('/')">/</button></td>
+
+        </tr>
+    </table>
+</body>
+</center>
+<script>
+    let output = document.getElementById("result");
+    function display(num){
+        output.value+=num;
+    }
+    function calculate(){
+        try{
+            output.value=eval(output.value);
+        }
+        catch{
+            alert("invalid");
+        }
+    }
+    function clr(){
+        output.value = "";
+    }
+</script>
+</html>
